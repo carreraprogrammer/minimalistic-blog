@@ -72,17 +72,9 @@ This Blog app will be a classic example of a blog website. I will create a fully
 ### Key Features <a name="key-features"></a>
 
 
-- **List all books**
-- **List all music albums**
-- **List of games**
-- **List all genres (e.g 'Comedy', 'Thriller')**
-- **List all labels (e.g. 'Gift', 'New')**
-- **List all authors (e.g. 'Stephen King')**
-- **Add a book**
-- **Add a music album**
-- **Add a game**
-- **Preserve data in JSON files**
-- **Created a console app**
+- **Post a blog**
+- **Comment the post**
+- **User registration**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
