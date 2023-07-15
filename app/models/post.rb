@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy, foreign_key: :post_id
   after_save :update_posts_counter
   after_destroy :decrease_posts_counter
+  validates :title, presence: true
 
   def update_posts_counter
     author.increment!(:post_counter)
