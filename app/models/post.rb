@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   after_destroy :decrease_posts_counter
   validates :title, presence: true
   validates :title, length: { maximum: 250 }
-  validates :comments_counter, numericality: {greater_than_or_equal_to: 0}
-  validates :likes_counter, numericality: {greater_than_or_equal_to: 0}
+  validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }
 
   def update_posts_counter
     author.increment!(:post_counter)
