@@ -86,4 +86,11 @@ RSpec.describe Post, type: :model do
       expect { subject.save }.to change { user.post_counter }.by(1)
     end
   end
+
+  describe '#decrease_post_counter' do
+    it 'should decrement author post counter' do
+      subject.save
+      expect { subject.destroy }.to change { user.post_counter }.by(-1)
+    end
+  end
 end
