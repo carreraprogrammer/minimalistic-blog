@@ -1,0 +1,13 @@
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+/home/asus/.rbenv/versions/3.0.6/bin/ruby -I /home/asus/.rbenv/versions/3.0.6/lib/ruby/3.0.0 -r ./siteconf20230715-34974-eul5.rb extconf.rb
+creating Makefile
+
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+make DESTDIR\= clean
+
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+make DESTDIR\=
+make: No se hace nada para 'all'.
+
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+make DESTDIR\= install

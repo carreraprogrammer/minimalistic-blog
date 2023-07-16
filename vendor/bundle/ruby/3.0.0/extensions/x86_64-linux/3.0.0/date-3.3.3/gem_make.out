@@ -1,0 +1,21 @@
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/date-3.3.3/ext/date
+/home/asus/.rbenv/versions/3.0.6/bin/ruby -I /home/asus/.rbenv/versions/3.0.6/lib/ruby/3.0.0 -r ./siteconf20230715-34974-60ebys.rb extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/date-3.3.3/ext/date
+make DESTDIR\= clean
+
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/date-3.3.3/ext/date
+make DESTDIR\=
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.so
+
+current directory: /home/asus/carreraprogrammer/MICROVERSE/Rails/rails-blog/vendor/bundle/ruby/3.0.0/gems/date-3.3.3/ext/date
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20230715-34974-uoo5z
