@@ -8,10 +8,18 @@ RSpec.describe User, type: :model do
                         post_counter: 0)
   end
 
-  let(:post_one) { Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0) }
-  let(:post_two) { Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0) }
-  let(:post_three) { Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0) }
-  let(:post_fourth) { Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0) }
+  let(:post_one) do
+    Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0)
+  end
+  let(:post_two) do
+    Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0)
+  end
+  let(:post_three) do
+    Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0)
+  end
+  let(:post_fourth) do
+    Post.create(author: subject, title: 'Anything', text: 'Lorem ipsum', comments_counter: 0, likes_counter: 0)
+  end
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
@@ -34,11 +42,11 @@ RSpec.describe User, type: :model do
 
   describe '#recent_posts' do
     it 'returns only 3 posts' do
-        post_one
-        post_two
-        post_three
-        post_fourth
-        expect(subject.recent_posts.size).to eq(3)
+      post_one
+      post_two
+      post_three
+      post_fourth
+      expect(subject.recent_posts.size).to eq(3)
     end
 
     it 'returns the most recent posts' do

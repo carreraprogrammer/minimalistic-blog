@@ -9,7 +9,7 @@ RSpec.describe Like, type: :model do
   before { subject.save }
 
   it { should belong_to(:post) }
-  it { should belong_to(:author)}
+  it { should belong_to(:author) }
 
   it 'updates the likes counter for a post' do
     expect(post.likes_counter).to eq(1)

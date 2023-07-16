@@ -13,12 +13,12 @@ RSpec.describe Post, type: :model do
                         likes_counter: 0)
   end
 
-  let(:comment_one) { Comment.create(post:subject, author: user, text: 'Hello Anything') }
-  let(:comment_two) { Comment.create(post:subject, author: user_two, text: 'Hello Anything two') }
-  let(:comment_three) { Comment.create(post:subject, author: user, text: 'How is going?') }
-  let(:comment_fourth) { Comment.create(post:subject, author: user_two, text: 'Fine, thanks') }
-  let(:comment_fifth) { Comment.create(post:subject, author: user_two, text: 'And you?') }
-  let(:comment_sixth) { Comment.create(post:subject, author: user, text: 'Fine too') }
+  let(:comment_one) { Comment.create(post: subject, author: user, text: 'Hello Anything') }
+  let(:comment_two) { Comment.create(post: subject, author: user_two, text: 'Hello Anything two') }
+  let(:comment_three) { Comment.create(post: subject, author: user, text: 'How is going?') }
+  let(:comment_fourth) { Comment.create(post: subject, author: user_two, text: 'Fine, thanks') }
+  let(:comment_fifth) { Comment.create(post: subject, author: user_two, text: 'And you?') }
+  let(:comment_sixth) { Comment.create(post: subject, author: user, text: 'Fine too') }
 
   it { should belong_to(:author) }
 
@@ -63,23 +63,24 @@ RSpec.describe Post, type: :model do
 
   describe '#recent_comments' do
     it 'returns only 5 comments' do
-        comment_one
-        comment_two
-        comment_three
-        comment_fourth
-        comment_fifth
-        comment_sixth
-        expect(subject.recent_comments.size).to eq(5)
+      comment_one
+      comment_two
+      comment_three
+      comment_fourth
+      comment_fifth
+      comment_sixth
+      expect(subject.recent_comments.size).to eq(5)
     end
 
     it 'returns the most recent comments' do
-        comment_one
-        comment_two
-        comment_three
-        comment_fourth
-        comment_fifth
-        comment_sixth
-        expect(subject.recent_comments).to eq([comment_sixth, comment_fifth, comment_fourth, comment_three, comment_two])
+      comment_one
+      comment_two
+      comment_three
+      comment_fourth
+      comment_fifth
+      comment_sixth
+      expect(subject.recent_comments).to eq([comment_sixth, comment_fifth, comment_fourth, comment_three,
+                                             comment_two])
     end
   end
 
