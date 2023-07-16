@@ -20,6 +20,8 @@ RSpec.describe Post, type: :model do
   let(:comment_fifth) { Comment.create(post:subject, author: user_two, text: 'And you?') }
   let(:comment_sixth) { Comment.create(post:subject, author: user, text: 'Fine too') }
 
+  it { should belong_to(:author) }
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
