@@ -1,17 +1,17 @@
 require 'rails_helper'
 require 'securerandom'
 
-RSpec.describe Post, :type => :model do
-  let(:user) { User.create(name: "Anything", photo: "Lorem ipsum", bio: "It doesn't matter", post_counter: 0) }
+RSpec.describe Post, type: :model do
+  let(:user) { User.create(name: 'Anything', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0) }
 
-  subject {
+  subject do
     described_class.new(author: user,
-                        title: "Anything",
-                        text: "Lorem ipsum",
+                        title: 'Anything',
+                        text: 'Lorem ipsum',
                         comments_counter: 0,
                         likes_counter: 0)
-  }
-  
+  end
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
@@ -35,7 +35,7 @@ RSpec.describe Post, :type => :model do
     subject.comments_counter = -1
     expect(subject).to_not be_valid
   end
-  
+
   it 'is not valid with a comments_counter that is not an integer' do
     subject.comments_counter = 1.5
     expect(subject).to_not be_valid
