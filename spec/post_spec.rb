@@ -3,6 +3,7 @@ require 'securerandom'
 
 RSpec.describe Post, type: :model do
   let(:user) { User.create(name: 'Anything', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0) }
+  let(:user_two) { User.create(name: 'Anything two', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0) }
 
   subject do
     described_class.new(author: user,
@@ -11,6 +12,13 @@ RSpec.describe Post, type: :model do
                         comments_counter: 0,
                         likes_counter: 0)
   end
+
+  let(:comment_one) { Comment.create(post:subject, author: user, text: 'Hello Anything') }
+  let(:comment_two) { Comment.create(post:subject, author: user_two, text: 'Hello Anything two') }
+  let(:comment_three) { Comment.create(post:subject, author: user, text: 'How is going?') }
+  let(:comment_fourth) { Comment.create(post:subject, author: user_two, text: 'Fine, thanks') }
+  let(:comment_fifth) { Comment.create(post:subject, author: user_two, text: 'And you?') }
+  let(:comment_sixth) { Comment.create(post:subject, author: user, text: 'Fine too') }
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
@@ -49,5 +57,27 @@ RSpec.describe Post, type: :model do
   it 'is not valid with a likes_counter that is not an integer' do
     subject.likes_counter = 1.5
     expect(subject).to_not be_valid
+  end
+
+  describe '#recent_comments' do
+    it 'returns only 5 comments' do
+        comment_one
+        comment_two
+        comment_three
+        comment_fourth
+        comment_fifth
+        comment_sixth
+        expect(subject.recent_comments.size).to eq(5)
+    end
+
+    it 'returns the most recent comments' do
+        comment_one
+        comment_two
+        comment_three
+        comment_fourth
+        comment_fifth
+        comment_sixth
+        expect(subject.recent_comments).to eq([comment_sixth, comment_fifth, comment_fourth, comment_three, comment_two])
+    end
   end
 end
