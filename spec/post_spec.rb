@@ -80,4 +80,10 @@ RSpec.describe Post, type: :model do
         expect(subject.recent_comments).to eq([comment_sixth, comment_fifth, comment_fourth, comment_three, comment_two])
     end
   end
+
+  describe '#update_post_counter' do
+    it 'should increment author post counter' do
+      expect { subject.save }.to change { user.post_counter }.by(1)
+    end
+  end
 end
