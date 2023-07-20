@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  
+
   subject { User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', post_counter: 3) }
 
   let(:post_one) {Post.new(author: subject, title: 'Hello rails', text: 'Rails is great', comments_counter: 0, likes_counter: 0)}
@@ -21,6 +21,24 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it "includes the correct placeholder text in the response body" do
+      expect(response.body).to include(post_one.title)
+    end
+  end
+
+  describe 'GET /show' do
+    it "returns http success" do
+      get user_post_path(subject.id, post_one.id)
+      expect(response).to have_http_status(:success)
+      expect(response.status).to eq(200)
+    end
+
+    it "renders the correct template" do
+      get user_post_path(subject.id, post_one.id)
+      expect(response).to render_template(:show)
+    end
+
+    it "includes the correct placeholder text in the response body" do
+      get user_post_path(subject.id, post_one.id)
       expect(response.body).to include(post_one.title)
     end
   end
