@@ -2,6 +2,6 @@
 <div class='bioContainer'>
   <h2> Bio </h2>
   <p> <%= @user.bio %> </p>
-  <%= render partial:"shared/post", collection: @user.recent_posts%>
-  <button>See All Posts</button>
 </div>
+  <%= render partial:"shared/post", collection: @user.recent_posts%>
+  <button class="seeAllPostsButton">See All Posts</button>

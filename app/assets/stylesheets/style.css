@@ -23,7 +23,7 @@
 
 .userContainer {
   border: 1px solid red;
-  height: 25vh;
+  height: 30vh;
   width: 80%;
   margin-left: 10%;
   margin-top: 5%;
@@ -68,4 +68,78 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: 5%;
+}
+
+.bioContainer {
+  height: 40vh;
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
+.bioContainer > h2 {
+  font-size: 3rem;
+  height: 20%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.bioContainer > p {
+  font-size: 1.5rem;
+  height: 80%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.postContainer {
+  border: 1px solid black;
+  height: 25vh;
+  width: 80%;
+  margin: 2% 10%;
+}
+
+.postTitle {
+  font-size: 2rem;
+  height: 30%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.postText {
+  font-size: 1.5rem;
+  height: 40%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.postInteractionContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.postInteractionContainer > p {
+  font-size: 1.5rem;
+  margin: 2%;
+}
+
+.seeAllPostsButton {
+  width: 20%;
+  margin-left: 40%;
+  height: 50px;
+  border: 2px solid black;
+  background: none;
+  transition: 0.5s all ease-in-out;
+}
+
+.seeAllPostsButton:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
