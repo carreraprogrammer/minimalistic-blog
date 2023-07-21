@@ -4,7 +4,7 @@
 
 <div class="indexPostContainer">
   <%= render partial: 'shared/post', collection: @posts%>
-  <div class="commentsContainer">
+  <div class="indexCommentsContainer">
     <% @posts.each do | post |%>
      <%= render partial: 'comment', collection: post.recent_comments %>
     <% end %>
