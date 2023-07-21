@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  text-decoration: none; 
+  list-style: none; 
+  box-sizing: border-box; 
+}
+
+#generalContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.usersIndexTitle {
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.userContainer {
+  border: 1px solid red;
+  height: 25vh;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.userImageContainer {
+  height: 100%;
+  width: 20%;
+  border: 1px solid black;
+}
+
+.userImage {
+  height: 100%;
+  width: 100%;
+}
+
+.userInformationContainer {
+  width: 75%;
+  margin-left: 5%;
+  height: 90%;
+  border: 1px solid purple;
+}
+
+.userInformationContainer > h1 {
+  font-size: 3rem;
+  height: 80%;
+  width: 100%;
+  border: 1px solid salmon;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.userInformationContainer > p {
+  font-size: 1.5rem;
+  height: 20%;
+  width: 100%;
+  border: 1px solid salmon;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
