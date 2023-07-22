@@ -1,5 +1,5 @@
 
-<h1>List of posts</h1>
+<h1 class='pageTitle'>List of posts by <%= @user.name %> </h1>
 <%= render @user %>
 
 <div class="indexPostContainer">
@@ -10,3 +10,5 @@
     <% end %>
   </div>
 </div>
+
+<button class="button">Pagination</button>
