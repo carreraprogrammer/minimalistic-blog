@@ -80,8 +80,6 @@ This Blog app will be a classic example of a blog website. I will create a fully
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 - Live demo is not available.
-- [Video Presentation](https://drive.google.com/file/d/1axejWDHK84dKpfaZPVe4bJkz8nFqYIFs/view?usp=sharing)
-- If you  want to have a glimpse of our project, [here it is](src/images/catalog_of_my_things.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
