@@ -28,7 +28,6 @@
   margin-top: 5%;
   display: flex;
   align-items: center;
-  border: 1px solid black;
 }
 
 .userImageContainer {
@@ -40,12 +39,14 @@
 .userImage {
   height: 100%;
   width: 100%;
+  border: 1px solid black;
 }
 
 .userInformationContainer {
   width: 75%;
   margin-left: 5%;
   height: 90%;
+  border: 1px solid black;
 }
 
 .userInformationContainer > h1 {

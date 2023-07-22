@@ -190,3 +190,11 @@ Please ⭐️ this repository if you found the project useful.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank for the group project, all great effort get award
+
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./MIT) licensed.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
