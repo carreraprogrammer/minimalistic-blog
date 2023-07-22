@@ -1,2 +1,9 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.text %></p>
+<div class="postShowContainer">
+  <div class="postShowInfo">
+   <div class="mainInfo">
+     <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
+     <p>Comments: <%= @post.comments_counter%>,  Likes: <%= @post.likes_counter%></p>
+  </div>
+  <p class="postText"> <%= @post.text %> </p>
+</div>
+ <%= render partial: 'comment', collection: @post.comments %>

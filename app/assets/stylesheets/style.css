@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  transition: 0.5s all ease-in-out;
+}
+
+a:hover {
+  transform: scale(1.02);
+}
+
+#generalContainer {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.pageTitle {
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+.userContainer {
+  height: 30vh;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.userImageContainer {
+  height: 100%;
+  width: 20%;
+  border: 1px solid black;
+}
+
+.userImage {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.userInformationContainer {
+  width: 75%;
+  margin-left: 5%;
+  height: 90%;
+  border: 1px solid black;
+}
+
+.userInformationContainer > h1 {
+  font-size: 3rem;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.userInformationContainer > p {
+  font-size: 1.5rem;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.bioContainer {
+  height: 40vh;
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  display: flex;
+}
+
+.bioContainer > h2 {
+  font-size: 3rem;
+  height: 20%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.bioContainer > p {
+  font-size: 1.5rem;
+  height: 80%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.postContainer {
+  border: 1px solid black;
+  height: 25vh;
+  width: 80%;
+  margin: 2% 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.postTitle {
+  font-size: 2rem;
+  height: 30%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.postText {
+  font-size: 1.5rem;
+  height: 40%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.postInteractionContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.postInteractionContainer > p {
+  font-size: 1.5rem;
+  margin: 2%;
+}
+
+.button {
+  width: 20%;
+  margin-left: 40%;
+  height: 50px;
+  border: 2px solid black;
+  background: none;
+  transition: 0.5s all ease-in-out;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexCommentsContainer {
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -2%;
+}
+
+.commentContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  padding: 2% 5%;
+  font-size: 1.5rem;
+}
+
+.commentInfo {
+  width: 20%;
+  font-weight: bold;
+}
+
+.commentText {
+  width: 70%;
+}
+
+.postShowContainer {
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.postShowInfo {
+  border: 1px solid black;
+  padding: 2% 0;
+}
+
+.mainInfo {
+  height: 10vh;
+  display: flex;
+}
+
+.mainInfo > h3 {
+  font-size: 2rem;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  width: 20%;
+  font-weight: bold;
+}
+
+.mainInfo > p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 5%;
+  width: 80%;
+  margin-top: 12px;
+  font-size: 1rem;
+}
