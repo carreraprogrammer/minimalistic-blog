@@ -10,6 +10,15 @@
   box-sizing: border-box;
 }
 
+a {
+  color: black;
+  transition: 0.5s all ease-in-out;
+}
+
+a:hover {
+  transform: scale(1.02);
+}
+
 #generalContainer {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -74,6 +83,7 @@
   width: 80%;
   margin-left: 10%;
   margin-top: 2%;
+  display: flex;
 }
 
 .bioContainer > h2 {
@@ -97,6 +107,8 @@
   height: 25vh;
   width: 80%;
   margin: 2% 10%;
+  display: flex;
+  flex-direction: column;
 }
 
 .postTitle {
@@ -135,11 +147,9 @@
   background: none;
   transition: 0.5s all ease-in-out;
   margin-top: 200px;
-}
-
-.button:hover {
-  cursor: pointer;
-  transform: scale(1.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .indexCommentsContainer {

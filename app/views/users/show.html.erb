@@ -4,4 +4,6 @@
   <p> <%= @user.bio %> </p>
 </div>
   <%= render partial:"shared/post", collection: @user.recent_posts%>
-  <button class="button">See All Posts</button>
+<%= link_to user_posts_path(@user), class: 'button' do %>
+  See All Posts
+<% end %>
