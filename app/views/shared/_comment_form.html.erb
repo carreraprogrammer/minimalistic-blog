@@ -1,0 +1,4 @@
+<%= form_with model: @comment, url: user_post_comments_path, local: true do |form| %>
+  <%= form.text_field :text, class: "commentTextArea", placeholder: "Enter your comment here" %>
+  <%= form.submit "Add comment", class: "commentSubmitButton button" %>
+<% end %>

@@ -3,12 +3,12 @@
 <%= render @user %>
 
 <div class="indexPostContainer">
-  <%= render partial: 'shared/post', collection: @posts%>
-  <div class="indexCommentsContainer">
     <% @posts.each do | post |%>
-     <%= render partial: 'comment', collection: post.recent_comments %>
+     <%= render partial: 'shared/post', object: post%>
+     <div class='commentsContainer'>
+       <%= render partial: 'comment', collection: post.recent_comments %>
+     </div>
     <% end %>
-  </div>
 </div>
 
 <button class="button">Pagination</button>

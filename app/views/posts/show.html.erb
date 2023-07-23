@@ -6,4 +6,10 @@
   </div>
   <p class="postText"> <%= @post.text %> </p>
 </div>
- <%= render partial: 'comment', collection: @post.comments %>
+<div class='showCommentsContainer'>
+  <%= render partial: 'comment', collection: @post.comments %>
+  <%= link_to new_user_post_comment_path(@user.id, @post), class: 'commentSubmitButton button' do %>
+    Add New Comment
+  <% end %>
+</div>
+ 
