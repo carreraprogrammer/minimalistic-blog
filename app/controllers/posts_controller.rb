@@ -8,16 +8,17 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @user = User.find_by(id: params[:user_id])
   end
 
-  def new 
+  def new
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
     @post.author = current_user
-  
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to user_posts_path(current_user), notice: 'Post was successfully created.' }
@@ -32,5 +33,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
