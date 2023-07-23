@@ -1,9 +1,12 @@
-<%= render @user%>
+<%= render @user %>
 <div class='bioContainer'>
   <h2> Bio </h2>
   <p> <%= @user.bio %> </p>
 </div>
-  <%= render partial:"shared/post", collection: @user.recent_posts%>
+<%= link_to new_user_post_path(@user), class: 'newPostButton button' do %>
+  Create New Post
+<% end %>
+<%= render partial: "shared/post", collection: @user.recent_posts %>
 <%= link_to user_posts_path(@user), class: 'button' do %>
-  See All Posts
+  See People's Posts
 <% end %>

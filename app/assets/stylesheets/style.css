@@ -260,3 +260,7 @@ a:hover {
   transform: scale(1.02);
   cursor: pointer;
 }
+
+.newPostButton {
+  margin-top: 2rem;
+}
