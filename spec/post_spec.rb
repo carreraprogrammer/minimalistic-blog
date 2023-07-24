@@ -72,15 +72,14 @@ RSpec.describe Post, type: :model do
       expect(subject.recent_comments.size).to eq(5)
     end
 
-    it 'returns the most recent comments' do
+    it 'returns the first five comments' do
       comment_one
       comment_two
       comment_three
       comment_fourth
       comment_fifth
       comment_sixth
-      expect(subject.recent_comments).to eq([comment_sixth, comment_fifth, comment_fourth, comment_three,
-                                             comment_two])
+      expect(subject.recent_comments).to eq([comment_one, comment_two, comment_three, comment_fourth, comment_fifth])
     end
   end
 
