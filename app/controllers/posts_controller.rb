@@ -6,10 +6,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:author).find_by(id: params[:id])
+    @post = Post.includes(:comments, comments: [:author]).find_by(id: params[:id])
   end
   
-
   def new
     @post = Post.new
   end

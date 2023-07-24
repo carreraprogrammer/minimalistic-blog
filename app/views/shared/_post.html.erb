@@ -1,4 +1,4 @@
-<%= link_to user_post_path(post.author, post), class: 'postContainer' do %>
+<%= link_to user_post_path(post.author_id, post), class: 'postContainer' do %>
   <h1 class="postTitle"> <%= post.title %> </h1>
   <p class="postText"> <%= post.text %></p>
   <div class="postInteractionContainer">
