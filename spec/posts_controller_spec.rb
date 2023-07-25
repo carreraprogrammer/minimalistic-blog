@@ -145,11 +145,35 @@ RSpec.describe PostsController, type: :system do
       expect(page).to have_link('Add New Comment')
     end
 
+    it 'have a button to add a new like' do
+      visit user_post_path(users.first, posts.first)
+      expect(page).to have_button('Like')
+    end
+
     scenario 'click on the add new comment button to go to the new comment page' do
       visit user_post_path(users.first, posts.first)
       click_link 'Add New Comment'
 
       expect(current_path).to eq(new_user_post_comment_path(users.first, posts.first))
+    end
+
+    scenario 'click on the like button to add a new like' do
+      visit user_post_path(users.first, posts.first)
+      click_button 'Like'
+
+      expect do
+        posts.first.reload
+      end.to change { posts.first.likes_counter }.by(1)
+    end
+
+    scenario 'the same user click the like button twice' do
+      visit user_post_path(users.first, posts.first)
+      click_button 'Like'
+      click_button 'Like'
+
+      expect do
+        posts.first.reload
+      end.to change { posts.first.likes_counter }.by(1)
     end
   end
 end
