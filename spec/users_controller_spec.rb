@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :system do
-  # Utilizar el método let para definir los usuarios una vez y reutilizarlos en las pruebas
   let(:users) do
     [
       User.create(name: 'Daniel',
