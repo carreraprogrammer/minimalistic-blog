@@ -21,7 +21,8 @@ RSpec.describe PostsController, type: :system do
 
   let(:posts) do
     [
-      Post.create(title: 'Post 1', text: 'Lorem ipsum dolor', author: users.first, likes_counter: 10, comments_counter: 5),
+      Post.create(title: 'Post 1', text: 'Lorem ipsum dolor', author: users.first, likes_counter: 10,
+                  comments_counter: 5),
       Post.create(title: 'Post 2', text: 'Lorem ipsum', author: users.first, likes_counter: 5, comments_counter: 3),
       Post.create(title: 'Post 3', text: 'Lorem ipsum', author: users.first, likes_counter: 7, comments_counter: 2),
       Post.create(title: 'Post 4', text: 'Lorem ipsum', author: users.first, likes_counter: 2, comments_counter: 1)
@@ -35,7 +36,7 @@ RSpec.describe PostsController, type: :system do
       Comment.create(text: 'Lorem ipsum', author: users.first, post: posts.first),
       Comment.create(text: 'Lorem ipsum', author: users.last, post: posts.first),
       Comment.create(text: 'Lorem ipsum', author: users.first, post: posts.first),
-      Comment.create(text: 'Lorem ipsum', author: users.last, post: posts.first),
+      Comment.create(text: 'Lorem ipsum', author: users.last, post: posts.first)
     ]
   end
 
@@ -45,9 +46,7 @@ RSpec.describe PostsController, type: :system do
     comments.each(&:save)
   end
 
-
   describe 'GET #index' do
-
     let(:user) { users.first }
 
     it 'returns a success response' do
@@ -59,17 +58,17 @@ RSpec.describe PostsController, type: :system do
       visit user_posts_path(user)
       expect(page).to have_css("img[src*='#{user.photo}']")
     end
-  
+
     it 'shows the user\'s name.' do
       visit user_posts_path(user)
       expect(page).to have_content(user.name)
     end
-  
+
     it 'shows the number of posts the user has.' do
       visit user_posts_path(user)
       expect(page).to have_content(user.post_counter)
     end
-  
+
     it 'shows the post\'s title.' do
       visit user_posts_path(user)
       posts.each do |post|
@@ -117,6 +116,40 @@ RSpec.describe PostsController, type: :system do
       click_link post.title
 
       expect(current_path).to eq(user_post_path(user.id, post.id))
+    end
+  end
+
+  describe 'GET #show', :focus do
+    it 'returns a success response' do
+      get user_post_path(users.first, posts.first)
+      expect(response).to be_successful
+    end
+
+    it 'show\'s the post\'s author name' do
+      visit user_post_path(users.first, posts.first)
+      expect(page).to have_content(posts.first.author.name)
+    end
+
+    it 'show\'s the number of comments in the post' do
+      visit user_post_path(users.first, posts.first)
+      expect(page).to have_content(posts.first.comments_counter)
+    end
+
+    it 'show\'s the number of likes in the post' do
+      visit user_post_path(users.first, posts.first)
+      expect(page).to have_content(posts.first.likes_counter)
+    end
+
+    it 'have a button to add a new comment' do
+      visit user_post_path(users.first, posts.first)
+      expect(page).to have_link('Add New Comment')
+    end
+
+    scenario 'click on the add new comment button to go to the new comment page' do
+      visit user_post_path(users.first, posts.first)
+      click_link 'Add New Comment'
+
+      expect(current_path).to eq(new_user_post_comment_path(users.first, posts.first))
     end
   end
 end
