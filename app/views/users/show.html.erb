@@ -8,5 +8,5 @@
 <% end %>
 <%= render partial: "shared/post", collection: @user.recent_posts %>
 <%= link_to user_posts_path(@user), class: 'button' do %>
-  See People's Posts
+  See All <%=@user.name%>'s Posts
 <% end %>
