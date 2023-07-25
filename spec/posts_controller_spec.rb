@@ -174,6 +174,6 @@ RSpec.describe PostsController, type: :system do
       expect do
         posts.first.reload
       end.to change { posts.first.likes_counter }.by(1)
-    end
+    endge
   end
 end
