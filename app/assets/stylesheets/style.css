@@ -157,6 +157,11 @@ a:hover {
   align-items: center;
 }
 
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
 .commentContainer {
   width: 100%;
   font-size: 1.5rem;
@@ -197,6 +202,7 @@ a:hover {
 .mainInfo {
   height: 10vh;
   display: flex;
+  align-items: center;
 }
 
 .mainInfo > h3 {
@@ -212,8 +218,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 5%;
-  width: 80%;
+  margin-right: 2%;
+  width: 60%;
   margin-top: 12px;
   font-size: 1rem;
 }
@@ -298,4 +304,18 @@ a:hover {
 .commentSubmitButton {
   margin-top: 2%;
   margin-bottom: 2%;
+}
+
+.mainInfo > form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.likeButton {
+  height: 30px;
+  width: 100px;
+  margin: 0;
+  margin-top: 5px;
 }

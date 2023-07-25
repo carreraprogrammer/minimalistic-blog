@@ -1,15 +1,17 @@
 <div class="postShowContainer">
   <div class="postShowInfo">
-   <div class="mainInfo">
-     <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
-     <p>Comments: <%= @post.comments_counter%>,  Likes: <%= @post.likes_counter%></p>
+    <div class="mainInfo">
+      <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
+      <p>Comments: <%= @post.comments_counter %>,
+        Likes: <%= @post.likes_counter %></p>
+      <%= render partial: "shared/like", locals: { like: Like.new, post: @post, user: @user } %>
+    </div>
+    <p class="postText"> <%= @post.text %> </p>
   </div>
-  <p class="postText"> <%= @post.text %> </p>
+  <div class='showCommentsContainer'>
+    <%= render partial: 'comment', collection: @post.comments %>
+    <%= link_to new_user_post_comment_path(@user, @post), class: 'commentSubmitButton button' do %>
+      Add New Comment
+    <% end %>
+  </div>
 </div>
-<div class='showCommentsContainer'>
-  <%= render partial: 'comment', collection: @post.comments %>
-  <%= link_to new_user_post_comment_path(@post.author_id, @post), class: 'commentSubmitButton button' do %>
-    Add New Comment
-  <% end %>
-</div>
- 
