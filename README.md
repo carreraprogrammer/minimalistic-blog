@@ -156,6 +156,11 @@ You can deploy this project using:
 - Twitter: [@carreraprogrammer](https://twitter.com/carreraprog)
 - LinkedIn: [Daniel Carrera] (https://www.linkedin.com/in/daniel-carrera-paz-85a917244/)
 
+👤 **Alejandro Velasquez**
+
+- GitHub: [@VelzckC0D3](https://github.com/VelzckC0D3)
+- LinkedIn: [Alejandro velasquez] (https://www.linkedin.com/in/velzckcode/)
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
