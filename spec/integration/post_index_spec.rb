@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PostsController, type: :system do
+RSpec.describe 'Post index page', type: :system do
   let(:users) do
     [
       User.create(name: 'Daniel',
@@ -22,7 +22,7 @@ RSpec.describe PostsController, type: :system do
   let(:posts) do
     [
       Post.create(title: 'Post 1', text: 'Lorem ipsum dolor', author: users.first, likes_counter: 10,
-                  comments_counter: 5),
+                  comments_counter: 0),
       Post.create(title: 'Post 2', text: 'Lorem ipsum', author: users.first, likes_counter: 5, comments_counter: 3),
       Post.create(title: 'Post 3', text: 'Lorem ipsum', author: users.first, likes_counter: 7, comments_counter: 2),
       Post.create(title: 'Post 4', text: 'Lorem ipsum', author: users.first, likes_counter: 2, comments_counter: 1)
@@ -116,64 +116,6 @@ RSpec.describe PostsController, type: :system do
       click_link post.title
 
       expect(current_path).to eq(user_post_path(user.id, post.id))
-    end
-  end
-
-  describe 'GET #show', :focus do
-    it 'returns a success response' do
-      get user_post_path(users.first, posts.first)
-      expect(response).to be_successful
-    end
-
-    it 'show\'s the post\'s author name' do
-      visit user_post_path(users.first, posts.first)
-      expect(page).to have_content(posts.first.author.name)
-    end
-
-    it 'show\'s the number of comments in the post' do
-      visit user_post_path(users.first, posts.first)
-      expect(page).to have_content(posts.first.comments_counter)
-    end
-
-    it 'show\'s the number of likes in the post' do
-      visit user_post_path(users.first, posts.first)
-      expect(page).to have_content(posts.first.likes_counter)
-    end
-
-    it 'have a button to add a new comment' do
-      visit user_post_path(users.first, posts.first)
-      expect(page).to have_link('Add New Comment')
-    end
-
-    it 'have a button to add a new like' do
-      visit user_post_path(users.first, posts.first)
-      expect(page).to have_button('Like')
-    end
-
-    scenario 'click on the add new comment button to go to the new comment page' do
-      visit user_post_path(users.first, posts.first)
-      click_link 'Add New Comment'
-
-      expect(current_path).to eq(new_user_post_comment_path(users.first, posts.first))
-    end
-
-    scenario 'click on the like button to add a new like' do
-      visit user_post_path(users.first, posts.first)
-      click_button 'Like'
-
-      expect do
-        posts.first.reload
-      end.to change { posts.first.likes_counter }.by(1)
-    end
-
-    scenario 'the same user click the like button twice' do
-      visit user_post_path(users.first, posts.first)
-      click_button 'Like'
-      click_button 'Like'
-
-      expect do
-        posts.first.reload
-      end.to change { posts.first.likes_counter }.by(1)
     end
   end
 end

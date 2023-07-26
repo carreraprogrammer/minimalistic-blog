@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system do
+RSpec.describe 'Users show page', type: :system do
   let(:users) do
     [
       User.create(name: 'Daniel',
@@ -21,34 +21,6 @@ RSpec.describe 'Users', type: :system do
 
   before do
     users.each(&:save)
-  end
-
-  describe 'index page' do
-    before { visit users_path }
-
-    it 'shows the list of users' do
-      expect(page).to have_content('List of Users')
-    end
-
-    it 'shows the user name of all users' do
-      users.each do |user|
-        expect(page).to have_content(user.name)
-      end
-    end
-
-    it 'shows the user photo of all users' do
-      users.each do |user|
-        expect(page).to have_css("img[src*='#{user.photo}']")
-      end
-    end
-
-    scenario "click on a user's name to go to their show page" do
-      visit users_path
-      user = users.first
-      click_link user.name
-
-      expect(current_path).to eq(user_path(user))
-    end
   end
 
   describe 'show page' do
