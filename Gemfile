@@ -56,6 +56,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webdrivers'
+  gem 'devise'
 end
 
 group :development do
