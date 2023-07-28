@@ -121,7 +121,7 @@ include Devise::Test::IntegrationHelpers
     end
 
     it 'shows a button that lets me view all of a user\'s posts ' do
-      expect(page).to have_link("See All #{user.name}'s Posts")
+      expect(page).to have_link("See All People's Posts")
     end
 
     scenario 'When I click a user\'s post, it redirects me to that post\'s show page.' do
@@ -132,7 +132,7 @@ include Devise::Test::IntegrationHelpers
     end
 
     scenario 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
-      click_on "See All #{user.name}'s Posts"
+      click_on "See All People's Posts"
       expect(current_path).to eq(user_posts_path(user.id))
     end
   end

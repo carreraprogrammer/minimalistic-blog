@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +10,11 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;
 }
 
 a {
@@ -23,6 +30,26 @@ a:hover {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.wellcomeContainer {
+  border: 1px solid black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wellcomeContainer > ul {
+  width: 100%;
+}
+
+.wellcomeContainer > h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+
 
 .pageTitle {
   font-size: 3rem;
@@ -151,13 +178,14 @@ a:hover {
 }
 
 .button {
+  min-width: 150px;
   width: 20%;
   margin-left: 40%;
   height: 50px;
   border: 2px solid black;
   background: none;
   transition: 0.5s all ease-in-out;
-  margin-top: 200px;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -323,4 +351,12 @@ a:hover {
   width: 100px;
   margin: 0;
   margin-top: 5px;
+}
+
+.logOut {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 100px;
+  min-width: 100px;
 }
