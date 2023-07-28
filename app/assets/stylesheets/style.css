@@ -30,9 +30,18 @@ a:hover {
   transform: scale(1.02);
 }
 
+li {
+  display: flex;
+  justify-content: center;
+}
+
 #generalContainer {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .wellcomeContainer {
@@ -70,7 +79,6 @@ a:hover {
 .userContainer {
   height: 30vh;
   width: 80%;
-  margin-left: 10%;
   margin-top: 5%;
   display: flex;
   align-items: center;
@@ -89,8 +97,8 @@ a:hover {
 }
 
 .userInformationContainer {
-  width: 75%;
   margin-left: 5%;
+  width: 75%;
   height: 90%;
   border: 1px solid black;
 }
@@ -118,7 +126,6 @@ a:hover {
   height: 40vh;
   border: 1px solid black;
   width: 80%;
-  margin-left: 10%;
   margin-top: 2%;
   display: flex;
 }
@@ -126,7 +133,6 @@ a:hover {
 .bioContainer > h2 {
   font-size: 2rem;
   height: 20%;
-  margin-left: 5%;
   display: flex;
   align-items: center;
 }
@@ -134,7 +140,6 @@ a:hover {
 .bioContainer > p {
   font-size: 1rem;
   height: 80%;
-  margin-left: 5%;
   display: flex;
   align-items: center;
 }
@@ -151,7 +156,6 @@ a:hover {
 .postTitle {
   font-size: 2rem;
   height: 30%;
-  margin-left: 5%;
   display: flex;
   align-items: center;
 }
@@ -159,9 +163,9 @@ a:hover {
 .postText {
   font-size: 1rem;
   height: 40%;
-  margin-left: 5%;
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .showCommentsContainer {
@@ -184,7 +188,6 @@ a:hover {
 .button {
   min-width: 150px;
   width: 20%;
-  margin-left: 40%;
   height: 50px;
   border: 2px solid black;
   background: none;
@@ -193,6 +196,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .button:hover {
@@ -214,7 +218,6 @@ a:hover {
   font-size: 1rem;
   border: 1px solid black;
   flex-direction: column;
-  margin-left: 10%;
 }
 
 .commentInfo {
@@ -229,12 +232,11 @@ a:hover {
 .postShowContainer {
   border: 1px solid black;
   width: 80%;
-  margin-left: 10%;
 }
 
 .postShowInfo {
   border: 1px solid black;
-  padding: 2% 0;
+  padding: 2% 2%;
 }
 
 .mainInfo {
@@ -245,7 +247,6 @@ a:hover {
 
 .mainInfo > h3 {
   font-size: 2rem;
-  margin-left: 5%;
   display: flex;
   align-items: center;
   width: 20%;
@@ -266,7 +267,6 @@ a:hover {
   border: 1px solid black;
   width: 50%;
   height: 50vh;
-  margin-left: 25%;
   margin-top: 2%;
   display: flex;
   flex-direction: column;
@@ -277,7 +277,6 @@ a:hover {
 .formInput {
   width: 80%;
   height: 50px;
-  margin-left: 10%;
   margin-top: 2%;
   border: 1px solid black;
   font-size: 1rem;
@@ -287,7 +286,6 @@ a:hover {
 .formText {
   width: 80%;
   height: 200px;
-  margin-left: 10%;
   margin-top: 2%;
   border: 1px solid black;
   font-size: 1rem;
@@ -312,21 +310,14 @@ a:hover {
   margin-top: 2rem;
 }
 
-.createCommentContainer {
-  border: 1px solid black;
-  height: 30vh;
-  width: 40%;
-  margin-left: 30%;
-  margin-top: 10%;
-}
-
-.createCommentContainer > form {
+.createCommentForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  height: 20rem;
+  width: 50%;
+  border: 3px solid black;
 }
 
 .commentTextArea {
@@ -341,6 +332,7 @@ a:hover {
 
 .commentSubmitButton {
   margin-top: 2%;
+  margin-left: 40%;
   margin-bottom: 2%;
 }
 
@@ -359,10 +351,10 @@ a:hover {
 
 .logOut {
   position: absolute;
-  top: 2%;
-  right: 2%;
-  width: 100px;
-  min-width: 100px;
+  top: 1%;
+  right: 1%;
+  width: 80px;
+  min-width: 50px;
 }
 
 .logInContainer {
@@ -414,7 +406,6 @@ a:hover {
 }
 
 .loginButtons {
-  margin-left: 0;
   margin-top: 1rem;
   margin-bottom: 0;
   height: 2rem;
