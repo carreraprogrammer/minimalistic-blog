@@ -1,7 +1,49 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Create users
+User.create!(
+    name: 'User 1',
+    email: 'user1@example.com',
+    password: 'password123',
+    bio: 'Hello, I am User 1 and this is my bio.',
+    photo: 'https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg'
+  )
+  
+  User.create!(
+    name: 'User 2',
+    email: 'user2@example.com',
+    password: 'password456',
+    bio: 'Hello, I am User 2 and this is my bio.',
+    photo: 'https://img.freepik.com/free-photo/cheerful-dark-skinned-woman-smiling-broadly-rejoicing-her-victory-competition-among-young-' + 'writers-standing-isolated-against-grey-wall-people-success-youth-happiness-concept_273609-1246.jpg'
+  )
+  
+  # Create posts
+  user1 = User.find_by(email: 'user1@example.com')
+  user2 = User.find_by(email: 'user2@example.com')
+  
+  Post.create!(
+    title: 'Post 1',
+    text: 'This is the first post created by User 1.',
+    author: user1
+  )
+  
+  Post.create!(
+    title: 'Post 2',
+    text: 'This is the first post created by User 2.',
+    author: user2
+  )
+  
+  # Create comments
+  post1 = Post.find_by(title: 'Post 1')
+  post2 = Post.find_by(title: 'Post 2')
+  
+  Comment.create!(
+    text: 'Great post!',
+    author: user2,
+    post: post1
+  )
+  
+  Comment.create!(
+    text: 'Thanks for sharing.',
+    author: user1,
+    post: post2
+  )
+  
