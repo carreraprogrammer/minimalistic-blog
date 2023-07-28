@@ -71,4 +71,4 @@ end
 
 Capybara.default_driver = :selenium_chrome
 # Please comment the line bellow or add your version of chrome driver
-# Webdrivers::Chromedriver.required_version = '114.0.5735.90'
+Webdrivers::Chromedriver.required_version = '114.0.5735.90'

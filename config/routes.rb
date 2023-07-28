@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'pages/index'
+  root to: 'pages#index'
+  devise_for :users, path: '', path_names: {
+    sign_in: 'sign-in',
+    sign_out: 'sign-out',
+    sign_up: 'sign-up',
+    password: 'password',
+    confirmation: 'verification'
+  }
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create] do
       resources :comments, only: [:new, :create]

@@ -3,7 +3,7 @@
 <%= render partial: 'shared/user_info', locals: { user: @user } %>
 
 <div class="indexPostContainer">
-    <% @user.posts.each do | post |%>
+    <% @posts.each do | post |%>
      <%= render partial: 'shared/post', object: post%>
      <div class='commentsContainer'>
        <%= render partial: 'comment', collection: post.recent_comments %>

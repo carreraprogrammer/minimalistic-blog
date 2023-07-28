@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  let(:user) { User.create(name: 'David', photo: 'photo.png', bio: 'A full-stack developer') }
+  let(:user) { User.create(name: 'David', photo: 'photo.png', bio: 'A full-stack developer', email: "David@gmail.com", password: "password234") }
   let(:post) { Post.create(author: user, title: 'Hello rails', text: 'Rails is great') }
 
   subject { Like.new(post: post, author: user) }

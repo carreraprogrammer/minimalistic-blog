@@ -12,7 +12,8 @@ User.create!(
     email: 'user2@example.com',
     password: 'password456',
     bio: 'Hello, I am User 2 and this is my bio.',
-    photo: 'https://img.freepik.com/free-photo/cheerful-dark-skinned-woman-smiling-broadly-rejoicing-her-victory-competition-among-young-' + 'writers-standing-isolated-against-grey-wall-people-success-youth-happiness-concept_273609-1246.jpg'
+    photo: 'https://img.freepik.com/free-photo/cheerful-dark-skinned-woman-smiling-broadly-rejoicing-her-victory-competition-among-young-' + 
+    'writers-standing-isolated-against-grey-wall-people-success-youth-happiness-concept_273609-1246.jpg'
   )
   
   # Create posts
