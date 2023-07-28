@@ -1,4 +1,6 @@
 
 <h1 class="pageTitle">List of Users</h1>
 
-<%=render @users %>
+<% @users.each do |user| %>
+  <%= render partial: 'shared/user_info', locals: { user: user } %>
+<% end %>

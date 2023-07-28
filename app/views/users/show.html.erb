@@ -1,4 +1,4 @@
-<%= render @user %>
+<%= render partial: 'shared/user_info', locals: { user: @user }%>
 <div class='bioContainer'>
   <h2> Bio </h2>
   <p> <%= @user.bio %> </p>
