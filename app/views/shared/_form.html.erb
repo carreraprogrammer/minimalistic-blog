@@ -1,5 +1,5 @@
 <%= form_with model: @post, url: user_posts_path, local: true do |form| %>
-  <%= form.text_field :title, class:'formInput' %>
-  <%= form.text_area :text, class: 'formText'%>
+  <%= form.text_field :title, class:'formInput', placeholder: 'Title' %>
+  <%= form.text_area :text, class: 'formText', placeholder: 'Content' %>
   <%= form.submit "Create New Post", class: 'formButton' %>
 <% end %>

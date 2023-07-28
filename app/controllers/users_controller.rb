@@ -2,7 +2,8 @@
     layout 'standard'
 
     def index
-      @user = current_user
+      @users = User.where.not(id: current_user.id)
+      @user = User.find_by(id: current_user.id)
     end
 
     def show

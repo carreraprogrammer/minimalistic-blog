@@ -17,6 +17,11 @@ input {
   padding-left: 1rem;
 }
 
+textarea {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
 h1 {
   font-family: 'Dancing Script', cursive;
 }
@@ -128,6 +133,7 @@ li {
   width: 80%;
   margin-top: 2%;
   display: flex;
+  padding: 1rem;
 }
 
 .bioContainer > h2 {
@@ -144,13 +150,22 @@ li {
   align-items: center;
 }
 
-.postContainer {
-  border: 1px solid black;
-  height: 25vh;
-  width: 80%;
-  margin: 2% 10%;
+.indexPostContainer{
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.postContainer {
+  border: 1px solid black;
+  height: auto;
+  padding: 1rem 0 0 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
 .postTitle {
@@ -170,6 +185,7 @@ li {
 
 .showCommentsContainer {
   width: 100%;
+  margin-top: 1rem;
   border: 1px solid black;
 }
 
@@ -215,6 +231,7 @@ li {
   height: auto;
   display: flex;
   padding: 2% 5%;
+  margin: 1rem;
   font-size: 1rem;
   border: 1px solid black;
   flex-direction: column;
@@ -230,7 +247,6 @@ li {
 }
 
 .postShowContainer {
-  border: 1px solid black;
   width: 80%;
 }
 
@@ -261,6 +277,13 @@ li {
   width: 60%;
   margin-top: 12px;
   font-size: 1rem;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formContainer > form {
@@ -350,11 +373,16 @@ li {
 }
 
 .logOut {
+  top:0;
   position: absolute;
-  top: 1%;
-  right: 1%;
+  right: 2%;
   width: 80px;
   min-width: 50px;
+}
+
+.logOut:hover {
+  border: 3px solid red;
+  color: red;
 }
 
 .logInContainer {
@@ -369,9 +397,9 @@ li {
 .logInFormContainer {
   border: 1px solid black;
   width: auto;
-  min-width: 30%;
+  min-width: 50%;
   height: auto;
-  padding: 1rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -391,7 +419,7 @@ li {
 }
 
 .field {
-  width: 80%;
+  width: 100%;
 }
 
 .field > input{
@@ -406,9 +434,16 @@ li {
 }
 
 .loginButtons {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  height: 2.5rem;
+  width: 100%;
+}
+
+.signUpButtons {
+  width: 20%;
+  height: 2.5rem;
   margin-top: 1rem;
-  margin-bottom: 0;
-  height: 2rem;
 }
 
 .actions {
@@ -429,4 +464,35 @@ li {
 .resetPasswordButton:hover {
   cursor: pointer;
   color: navy;
+}
+
+.photoField > input {
+  border: 1px solid black;
+  width: 100%;
+  padding: 1rem;
+}
+
+.bioField > textarea {
+  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+}
+
+.orDividerContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.orDividerContainer > p {
+  font-family: 'Dancing Script', cursive;
+}
+.orDividerContainer > hr{
+  border: 1px solid black;
+  font-weight: normal;
+  height: 1px;
+  width: 40%;
+  margin: 0 5px;
 }
