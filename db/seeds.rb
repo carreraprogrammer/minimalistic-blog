@@ -1,20 +1,32 @@
 # Create users
-User.create!(
-    name: 'User 1',
-    email: 'user1@example.com',
-    password: 'password123',
-    bio: 'Hello, I am User 1 and this is my bio.',
-    photo: 'https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg'
-  )
-  
-  User.create!(
-    name: 'User 2',
-    email: 'user2@example.com',
-    password: 'password456',
-    bio: 'Hello, I am User 2 and this is my bio.',
-    photo: 'https://img.freepik.com/free-photo/cheerful-dark-skinned-woman-smiling-broadly-rejoicing-her-victory-competition-among-young-' + 
+# db/seeds.rb
+
+# Create users
+user1 = User.new(
+  name: 'User 1',
+  email: 'user1@example.com',
+  password: 'password123',
+  bio: 'Hello, I am User 1 and this is my bio.',
+  photo: 'https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg'
+)
+
+user1.skip_confirmation! 
+user1.save!
+
+user2 = User.new(
+  name: 'User 2',
+  email: 'user2@example.com',
+  password: 'password456',
+  bio: 'Hello, I am User 2 and this is my bio.',
+  photo: 'https://img.freepik.com/free-photo/cheerful-dark-skinned-woman-smiling-broadly-rejoicing-her-victory-competition-among-young-' + 
     'writers-standing-isolated-against-grey-wall-people-success-youth-happiness-concept_273609-1246.jpg'
-  )
+)
+
+user2.skip_confirmation! 
+user2.save!
+
+# Resto de tu código de seeds...
+
   
   # Create posts
   user1 = User.find_by(email: 'user1@example.com')
