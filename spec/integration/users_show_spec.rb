@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Users show page', type: :system do
-
+  include Devise::Test::IntegrationHelpers 
+  
   let(:users) do
     [
       User.create(name: 'Daniel',
@@ -27,7 +28,11 @@ RSpec.describe 'Users show page', type: :system do
   end
 
   before do
-    users.each(&:save)
+    users.each do |user|
+      user.skip_confirmation!
+      user.save
+    end
+    login_as(users.first)
   end
 
   describe 'show page' do

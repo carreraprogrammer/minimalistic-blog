@@ -1,12 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
+  include Devise::Test::IntegrationHelpers
+
   let(:user) { User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', email: "Daniel@gmail.com", password: 'password123') }
-  let(:post) { Post.new(author: user, title: 'Hello rails', text: 'Rails is great') }
+  let(:post) { Post.new(author: user, title: 'Hello rails', text: 'Rails is great', comments_counter: 0) }
 
   subject { Comment.new(post: post, author: user, text: 'Hello!') }
 
-  before { subject.save }
+  before do 
+    user.skip_confirmation!
+    user.save
+    post.save
+    subject.save
+  end
 
   it { should belong_to(:post) }
   it { should belong_to(:author) }

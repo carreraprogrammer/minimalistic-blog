@@ -27,13 +27,17 @@ include Devise::Test::IntegrationHelpers
   end
 
   before do
-    users.each(&:save)
-    sign_in(users.first)
+    users.each do |user|
+      user.skip_confirmation!
+      user.save
+    end
     login_as(users.first)
   end
 
   describe 'index page' do
-    before { visit users_path }
+    before {
+      visit users_path 
+    }
 
     it 'shows the user name of signed user' do
       expect(page).to have_content(users.first.name)
@@ -44,12 +48,13 @@ include Devise::Test::IntegrationHelpers
     end
 
     scenario "click on a user's name to go to their show page" do
+      sign_in(users.first)
       visit users_path
-      user = users.first
-      click_link user.name
-
-      expect(current_path).to eq(user_path(user))
+      click_on users.first.name
+    
+      expect(current_path).to eq(user_path(users.first))
     end
+    
   end
 
   describe 'show page' do

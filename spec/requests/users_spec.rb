@@ -5,6 +5,8 @@ RSpec.describe 'Users', type: :request do
   subject { User.create!(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', post_counter: 3, email: "daniel@gmail.com", password: 'password') }
   before do
     sign_in(subject)
+    subject.skip_confirmation!
+    subject.save
     login_as(subject)
   end
 

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users show page', type: :system do
+  include Devise::Test::IntegrationHelpers 
 
     let(:users) do
       [
@@ -45,6 +46,14 @@ RSpec.describe 'Users show page', type: :system do
       Comment.create(text: 'Lorem ipsum', author: users.first, post: posts.first),
       Comment.create(text: 'Lorem ipsum', author: users.last, post: posts.first)
     ]
+  end
+
+  before do
+    users.each do |user|
+      user.skip_confirmation!
+      user.save
+    end
+    login_as(users.first)
   end
 
   describe 'GET #show', :focus do

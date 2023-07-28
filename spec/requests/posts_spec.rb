@@ -6,6 +6,8 @@ RSpec.describe 'Posts', type: :request do
   
   before do
     sign_in(subject)
+    subject.skip_confirmation!
+    subject.save
     login_as(subject)
   end
 

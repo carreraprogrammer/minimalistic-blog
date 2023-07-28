@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Post index page', type: :system do
+  include Devise::Test::IntegrationHelpers 
   let(:users) do
     [
       User.create(name: 'Daniel',
@@ -47,7 +48,11 @@ RSpec.describe 'Post index page', type: :system do
   end
 
   before do
-    users.each(&:save)
+    users.each do |user|
+      user.skip_confirmation!
+      user.save
+    end
+    login_as(users.first)
     posts.each(&:save)
     comments.each(&:save)
   end
