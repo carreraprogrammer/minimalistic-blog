@@ -1,3 +1,9 @@
+<% if flash[:alert] %>
+  <div class="flash alert"><%= flash[:alert] %></div>
+<%elsif flash[:notice]%>
+  <div class="flash notice"><%= flash[:notice] %></div>
+<% end %>
+
 <div class="postShowContainer">
   <div class="postShowInfo">
     <div class="mainInfo">
