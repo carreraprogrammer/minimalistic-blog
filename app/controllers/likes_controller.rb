@@ -5,9 +5,13 @@ class LikesController < ApplicationController
     @like.post = Post.find(params[:post_id])
 
     # Check if the user has not already liked the post
-    return if Like.exists?(author: @like.author, post: @like.post)
+      if  Like.exists?(author: @like.author, post: @like.post)
+        flash[:alert] = 'You have already liked this post.'
+      else
+        flash[:notice] = 'You liked the post!'
+        @like.save!
+      end
 
-    @like.save!
-    redirect_to user_post_path(params[:user_id], params[:post_id])
+    redirect_to user_post_path(@like.author.id, @like.post.id)
   end
 end

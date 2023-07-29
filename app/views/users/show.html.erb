@@ -1,3 +1,5 @@
+ <%= render 'shared/navbar'%>
+
 <%= render partial: 'shared/user_info', locals: { user: @user } %>
 <div class='bioContainer'>
   <h2> Bio </h2>
@@ -14,5 +16,3 @@
 <%= link_to user_posts_path(@user), class: 'button' do %>
   See All People's Posts
 <% end %>
-
-<%= render "shared/logout_button" %>
