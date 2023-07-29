@@ -4,14 +4,15 @@
       <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
       <p>Comments: <%= @post.comments_counter %>,
         Likes: <%= @post.likes_counter %></p>
-      <%= render partial: "shared/like", locals: { like: Like.new, post: @post, user: @post.author } %>
+      <%= render partial: "shared/like", locals: { like: Like.new, post: @post, user: current_user } %>
     </div>
     <p class="postText"> <%= @post.text %> </p>
   </div>
   <div class='showCommentsContainer'>
     <%= render partial: 'comment', collection: @post.comments %>
-    <%= link_to new_user_post_comment_path(@post.author, @post), class: 'commentSubmitButton button' do %>
+    <%= link_to new_user_post_comment_path(current_user, @post), class: 'commentSubmitButton button' do %>
       Add New Comment
     <% end %>
   </div>
 </div>
+<%= render "shared/logout_button" %>

@@ -5,7 +5,9 @@ RSpec.describe User, type: :model do
     described_class.new(name: 'Anything',
                         photo: 'Lorem ipsum',
                         bio: "It doesn't matter",
-                        post_counter: 0)
+                        post_counter: 0,
+                        email: 'Anything@gmail.com',
+                        password: 'password123')
   end
 
   let(:post_one) do

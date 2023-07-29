@@ -1,9 +1,9 @@
 
 <h1 class='pageTitle'>List of posts by <%= @user.name %> </h1>
-<%= render @user %>
+<%= render partial: 'shared/user_info', locals: { user: @user } %>
 
 <div class="indexPostContainer">
-    <% @user.posts.each do | post |%>
+    <% @posts.each do | post |%>
      <%= render partial: 'shared/post', object: post%>
      <div class='commentsContainer'>
        <%= render partial: 'comment', collection: post.recent_comments %>
@@ -12,3 +12,4 @@
 </div>
 
 <button class="button">Pagination</button>
+<%= render "shared/logout_button" %>

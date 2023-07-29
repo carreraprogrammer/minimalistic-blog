@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   layout 'standard'
 
   def index
-    @users = User.all
+    @users = User.where.not(id: current_user.id)
+    @user = User.find_by(id: current_user.id)
   end
 
   def show

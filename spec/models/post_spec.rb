@@ -2,8 +2,14 @@ require 'rails_helper'
 require 'securerandom'
 
 RSpec.describe Post, type: :model do
-  let(:user) { User.create(name: 'Anything', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0) }
-  let(:user_two) { User.create(name: 'Anything two', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0) }
+  let(:user) do
+    User.create(name: 'Anything', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0,
+                email: 'Anything@gmail.com', password: 'password')
+  end
+  let(:user_two) do
+    User.create(name: 'Anything two', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0,
+                email: 'Anythingtwo@gmail.com', password: 'password')
+  end
 
   subject do
     described_class.new(author: user,
@@ -63,6 +69,7 @@ RSpec.describe Post, type: :model do
 
   describe '#recent_comments' do
     it 'returns only 5 comments' do
+      # Set the author_id for each comment
       comment_one
       comment_two
       comment_three
@@ -73,6 +80,7 @@ RSpec.describe Post, type: :model do
     end
 
     it 'returns the first five comments' do
+      # Set the author_id for each comment
       comment_one
       comment_two
       comment_three

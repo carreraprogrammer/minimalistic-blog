@@ -1,7 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  subject { User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', post_counter: 3) }
+  include Devise::Test::IntegrationHelpers
+  subject do
+    User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', post_counter: 3, email: 'daniel@gmail.com',
+             password: 'password')
+  end
+
+  before do
+    sign_in(subject)
+    subject.skip_confirmation!
+    subject.save
+    login_as(subject)
+  end
 
   let(:post_one) do
     Post.new(author: subject, title: 'Hello rails', text: 'Rails is great', comments_counter: 0, likes_counter: 0)

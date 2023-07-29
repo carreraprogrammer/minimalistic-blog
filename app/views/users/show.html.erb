@@ -1,12 +1,18 @@
-<%= render @user %>
+<%= render partial: 'shared/user_info', locals: { user: @user } %>
 <div class='bioContainer'>
   <h2> Bio </h2>
   <p> <%= @user.bio %> </p>
 </div>
-<%= link_to new_user_post_path(@user), class: 'newPostButton button' do %>
-  Create New Post
+
+<% if @user == current_user %>
+  <%= link_to new_user_post_path(@user), class: 'newPostButton button' do %>
+    Create New Post
+  <% end %>
 <% end %>
+
 <%= render partial: "shared/post", collection: @user.recent_posts %>
 <%= link_to user_posts_path(@user), class: 'button' do %>
-  See All <%=@user.name%>'s Posts
+  See All People's Posts
 <% end %>
+
+<%= render "shared/logout_button" %>

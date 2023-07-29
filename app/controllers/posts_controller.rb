@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   layout 'standard'
 
   def index
+    @posts = Post.includes(:comments, comments: [:author]).all
     @user = User.includes(posts: [{ comments: [:author] }]).find(params[:user_id])
   end
 

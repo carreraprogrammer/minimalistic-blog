@@ -1,4 +1,11 @@
+<h2 class="pageTitle"> Let's Add Your First Post </h2>
 
-<h1 class="pageTitle">List of Users</h1>
+<%= render partial: 'shared/user_info', locals: { user: @user } %>
 
-<%=render @users %>
+<h2 class="pageTitle", style="margin-top: 3rem;">Meet People Like You </h1>
+
+<% @users.each do |user| %>
+  <%= render partial: 'shared/user_info', locals: { user: user } %>
+<% end %>
+
+<%= render "shared/logout_button" %>
