@@ -1,6 +1,6 @@
 <%= render partial: 'shared/user_info', locals: { user: @user } %>
 <div class='bioContainer'>
-  <h2> Bio </h2>
+  <h1> Bio </h1>
   <p> <%= @user.bio %> </p>
 </div>
 
@@ -16,3 +16,5 @@
 <% end %>
 
 <%= render "shared/logout_button" %>
+<%= render "shared/back_button" %>
+<%= render "shared/home_button"%>

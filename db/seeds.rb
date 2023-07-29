@@ -6,7 +6,7 @@ user1 = User.new(
   email: 'user1@example.com',
   password: 'password123',
   bio: 'Travel enthusiast, photographer, and nature lover. Exploring the world one step at a time.',
-  photo: './app/assets/images/Seeds/1.png'
+  photo: 'https://i.pinimg.com/564x/e7/a7/58/e7a7584292d4ad92db80fb7f7df5a852.jpg'
 )
 user1.skip_confirmation!
 user1.save!
@@ -15,8 +15,8 @@ user2 = User.new(
   name: 'Sarah',
   email: 'user2@example.com',
   password: 'password456',
-  bio: 'Aspiring chef with a passion for experimenting in the kitchen. Food is love!',
-  photo: './app/assets/images/Seeds/4.png'
+  bio: 'Aspiring chef with a passion for cats and experimenting in the kitchen. Food is love!',
+  photo: 'https://i.pinimg.com/564x/5c/9e/d1/5c9ed10a6dff7e9e8790666fe137edfc.jpg'
 )
 user2.skip_confirmation!
 user2.save!
@@ -27,7 +27,7 @@ user3 = User.new(
   email: 'user3@example.com',
   password: 'password789',
   bio: 'Tech geek, gamer, and anime fan. Building new worlds in virtual reality.',
-  photo: './app/assets/images/Seeds/2.png'
+  photo: 'https://i.pinimg.com/originals/f0/c4/fb/f0c4fbdb53e45e7423a4127eb54b7ef8.png'
 )
 user3.skip_confirmation!
 user3.save!
@@ -37,7 +37,7 @@ user4 = User.new(
   email: 'user4@example.com',
   password: 'passwordabc',
   bio: 'Fitness enthusiast and personal trainer. Helping people achieve their fitness goals.',
-  photo: './app/assets/images/Seeds/3.png'
+  photo: 'https://i.pinimg.com/564x/89/62/fb/8962fb71717ccb0864986b6068f1bb57.jpg'
 )
 user4.skip_confirmation!
 user4.save!
@@ -47,7 +47,7 @@ user5 = User.new(
   email: 'user5@example.com',
   password: 'passwordxyz',
   bio: 'Art lover and aspiring artist. Expressing emotions through colorful creations.',
-  photo: './app/assets/images/Seeds/5.png'
+  photo: 'https://i.pinimg.com/564x/fc/cb/77/fccb770e83283719e00a2ceff78191e3.jpg'
 )
 user5.skip_confirmation!
 user5.save!
@@ -84,62 +84,63 @@ post5 = Post.create!(
 )
 
 # Create comments
+# Create comments
 comment1 = Comment.create!(
-  text: 'Great post, User 1! The colors in the sky are stunning.',
+  text: 'Great post, Clerick! The colors in the sky are stunning.',
   author: user3,
   post: post1
 )
 
 comment2 = Comment.create!(
-  text: 'I love trying out new recipes too! User 2, your food looks delicious!',
+  text: 'I love trying out new recipes too, Sarah! Your food looks delicious!',
   author: user1,
   post: post2
 )
 
 comment3 = Comment.create!(
-  text: 'User 3, that game sounds epic! Count me in next time!',
+  text: 'Mark, that game sounds epic! Count me in next time!',
   author: user4,
   post: post3
 )
 
 comment4 = Comment.create!(
-  text: 'User 4, you inspire me to stay fit and active!',
+  text: 'Dannia, you inspire me to stay fit and active!',
   author: user2,
   post: post4
 )
 
 comment5 = Comment.create!(
-  text: 'User 5, your artwork is amazing! Keep shining with those colors!',
+  text: 'Cielo, your artwork is amazing! Keep shining with those colors!',
   author: user1,
   post: post5
 )
 
 comment6 = Comment.create!(
-  text: 'Thanks, User 1! Your travel photos are always a treat.',
+  text: 'Thanks, Clerick! Your travel photos are always a treat.',
   author: user2,
   post: post1
 )
 
 comment7 = Comment.create!(
-  text: 'I need that recipe, User 2! Looks like a masterpiece indeed!',
+  text: 'I need that recipe, Sarah! Looks like a masterpiece indeed!',
   author: user3,
   post: post2
 )
 
 comment8 = Comment.create!(
-  text: 'User 3, we should form a gaming squad! I\'m up for the challenge.',
+  text: 'Mark, we should form a gaming squad! I\'m up for the challenge.',
   author: user5,
   post: post3
 )
 
 comment9 = Comment.create!(
-  text: 'Keep rocking those workouts, User 4! You're an inspiration.',
+  text: 'Keep rocking those workouts, Dannia! You\'re an inspiration.',
   author: user3,
   post: post4
 )
 
 comment10 = Comment.create!(
-  text: 'User 5, your art always brightens my day. Keep creating!',
+  text: 'Cielo, your art always brightens my day. Keep creating!',
   author: user4,
   post: post5
 )
