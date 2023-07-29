@@ -244,6 +244,23 @@ p {
   flex-direction: column;
   margin-top: 1rem;
   background-color: white;
+  position: relative;
+}
+
+.linkToPost:hover {
+  color: navy;
+  transform: translateX(5px);
+}
+
+.deletePostBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10000;
+}
+
+.deletePostBtn:hover {
+  color: red;
 }
 
 .postTitle {

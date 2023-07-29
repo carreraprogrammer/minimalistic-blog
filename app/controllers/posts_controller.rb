@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   layout 'standard'
 
   def index
@@ -25,6 +26,12 @@ class PostsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path, notice: 'Post deleted successfully.'
   end
 
   private

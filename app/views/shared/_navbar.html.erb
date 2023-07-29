@@ -3,5 +3,5 @@
   <%= link_to users_path, class: 'homeButton' do %>
     <img src="<%= asset_path('favicon.svg') %>" alt="Home">
   <% end %>
-  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "button logOut" %>
+  <%= link_to "Log Out", destroy_user_session_path, method: :get, class: "button logOut" %>
 </div>

@@ -6,7 +6,8 @@ user1 = User.new(
   email: 'user1@example.com',
   password: 'password123',
   bio: 'Travel enthusiast, photographer, and nature lover. Exploring the world one step at a time.',
-  photo: 'https://i.pinimg.com/564x/e7/a7/58/e7a7584292d4ad92db80fb7f7df5a852.jpg'
+  photo: 'https://i.pinimg.com/564x/e7/a7/58/e7a7584292d4ad92db80fb7f7df5a852.jpg',
+  role: 'admin'
 )
 user1.skip_confirmation!
 user1.save!
@@ -16,7 +17,8 @@ user2 = User.new(
   email: 'user2@example.com',
   password: 'password456',
   bio: 'Aspiring chef with a passion for cats and experimenting in the kitchen. Food is love!',
-  photo: 'https://i.pinimg.com/564x/5c/9e/d1/5c9ed10a6dff7e9e8790666fe137edfc.jpg'
+  photo: 'https://i.pinimg.com/564x/5c/9e/d1/5c9ed10a6dff7e9e8790666fe137edfc.jpg',
+  role: 'none'
 )
 user2.skip_confirmation!
 user2.save!
@@ -27,7 +29,8 @@ user3 = User.new(
   email: 'user3@example.com',
   password: 'password789',
   bio: 'Tech geek, gamer, and anime fan. Building new worlds in virtual reality.',
-  photo: 'https://i.pinimg.com/originals/f0/c4/fb/f0c4fbdb53e45e7423a4127eb54b7ef8.png'
+  photo: 'https://i.pinimg.com/originals/f0/c4/fb/f0c4fbdb53e45e7423a4127eb54b7ef8.png',
+  role: 'none'
 )
 user3.skip_confirmation!
 user3.save!
@@ -37,7 +40,8 @@ user4 = User.new(
   email: 'user4@example.com',
   password: 'passwordabc',
   bio: 'Fitness enthusiast and personal trainer. Helping people achieve their fitness goals.',
-  photo: 'https://i.pinimg.com/564x/89/62/fb/8962fb71717ccb0864986b6068f1bb57.jpg'
+  photo: 'https://i.pinimg.com/564x/89/62/fb/8962fb71717ccb0864986b6068f1bb57.jpg',
+  role: 'none'
 )
 user4.skip_confirmation!
 user4.save!
@@ -47,7 +51,8 @@ user5 = User.new(
   email: 'user5@example.com',
   password: 'passwordxyz',
   bio: 'Art lover and aspiring artist. Expressing emotions through colorful creations.',
-  photo: 'https://i.pinimg.com/564x/fc/cb/77/fccb770e83283719e00a2ceff78191e3.jpg'
+  photo: 'https://i.pinimg.com/564x/fc/cb/77/fccb770e83283719e00a2ceff78191e3.jpg',
+  role: 'none'
 )
 user5.skip_confirmation!
 user5.save!
