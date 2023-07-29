@@ -2,8 +2,14 @@ require 'rails_helper'
 require 'securerandom'
 
 RSpec.describe Post, type: :model do
-  let(:user) { User.create(name: 'Anything', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0, email: "Anything@gmail.com", password: "password") }
-  let(:user_two) { User.create(name: 'Anything two', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0, email: "Anythingtwo@gmail.com", password: "password") }
+  let(:user) do
+    User.create(name: 'Anything', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0,
+                email: 'Anything@gmail.com', password: 'password')
+  end
+  let(:user_two) do
+    User.create(name: 'Anything two', photo: 'Lorem ipsum', bio: "It doesn't matter", post_counter: 0,
+                email: 'Anythingtwo@gmail.com', password: 'password')
+  end
 
   subject do
     described_class.new(author: user,

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Post index page', type: :system do
-  include Devise::Test::IntegrationHelpers 
+  include Devise::Test::IntegrationHelpers
   let(:users) do
     [
       User.create(name: 'Daniel',

@@ -67,8 +67,6 @@ li {
   margin-bottom: 2rem;
 }
 
-
-
 .pageTitle {
   font-size: 3rem;
   width: 100%;
@@ -150,7 +148,7 @@ li {
   align-items: center;
 }
 
-.indexPostContainer{
+.indexPostContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -373,7 +371,7 @@ li {
 }
 
 .logOut {
-  top:0;
+  top: 0;
   position: absolute;
   right: 2%;
   width: 80px;
@@ -422,7 +420,7 @@ li {
   width: 100%;
 }
 
-.field > input{
+.field > input {
   border: 1px solid black;
   height: 2.5rem;
   margin-bottom: 1rem;
@@ -489,7 +487,7 @@ li {
 .orDividerContainer > p {
   font-family: 'Dancing Script', cursive;
 }
-.orDividerContainer > hr{
+.orDividerContainer > hr {
   border: 1px solid black;
   font-weight: normal;
   height: 1px;

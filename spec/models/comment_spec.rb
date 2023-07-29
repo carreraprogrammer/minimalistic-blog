@@ -3,12 +3,14 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   include Devise::Test::IntegrationHelpers
 
-  let(:user) { User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', email: "Daniel@gmail.com", password: 'password123') }
+  let(:user) do
+    User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', email: 'Daniel@gmail.com', password: 'password123')
+  end
   let(:post) { Post.new(author: user, title: 'Hello rails', text: 'Rails is great', comments_counter: 0) }
 
-  subject { Comment.new(post: post, author: user, text: 'Hello!') }
+  subject { Comment.new(post:, author: user, text: 'Hello!') }
 
-  before do 
+  before do
     user.skip_confirmation!
     user.save
     post.save

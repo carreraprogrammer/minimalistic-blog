@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  include Devise::Test::IntegrationHelpers 
-  subject { User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', post_counter: 3, email: "daniel@gmail.com", password: 'password') }
-  
+  include Devise::Test::IntegrationHelpers
+  subject do
+    User.new(name: 'Daniel', photo: 'photo.png', bio: 'Lorem ipsum', post_counter: 3, email: 'daniel@gmail.com',
+             password: 'password')
+  end
+
   before do
     sign_in(subject)
     subject.skip_confirmation!
