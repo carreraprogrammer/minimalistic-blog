@@ -96,6 +96,14 @@ p {
   font-size: 2rem;
 }
 
+.homeButton > img {
+  height: 4rem;
+}
+
+.homeButton:hover {
+  transform: translateX(5px);
+}
+
 #generalContainer {
   padding: 2rem;
   margin-top: 5rem;

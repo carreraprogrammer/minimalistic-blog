@@ -1,7 +1,7 @@
 <div class="navbar">
   <%= link_to "Back", request.referer || root_path, class: 'backButton button' %>
   <%= link_to users_path, class: 'homeButton' do %>
-    <i class="fas fa-home"></i>
+    <img src="<%= asset_path('favicon.svg') %>" alt="Home">
   <% end %>
   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "button logOut" %>
 </div>
