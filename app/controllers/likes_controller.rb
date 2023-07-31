@@ -4,9 +4,7 @@ class LikesController < ApplicationController
     @like.author = User.includes(posts: [{ comments: [:author] }]).find(current_user.id)
     @like.post = Post.find(params[:post_id])
 
-    if !Like.exists?(author: @like.author, post: @like.post)
-      @like.save!
-    end
+    @like.save! unless Like.exists?(author: @like.author, post: @like.post)
 
     respond_to do |format|
       format.html { redirect_to user_post_path(@like.author.id, @like.post.id) }

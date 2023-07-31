@@ -7,7 +7,7 @@
     <p> Comments: <%= post.comments_counter %></p>
     <p> Likes: <%= post.likes_counter %></p>
   </div>
-  <% if current_user.admin? || current_user.id == post.author_id %>
+  <% if can_delete?(post)%>
     <%= link_to 'Delete', user_post_path(post.author_id, post), method: :delete, data: { confirm: 'Delete Post?' }, class: "deletePostBtn" %>
   <% end %>
 </div>

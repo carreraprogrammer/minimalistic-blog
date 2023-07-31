@@ -2,7 +2,7 @@
   <p class='commentInfo'> <%= comment.author.name %>: </p>
   <p class='commentText'> <%= comment.text %> </p>
 
-  <% if current_user == comment.author || current_user.admin? %>
+  <% if can_delete?(comment) %>
     <%= link_to 'Delete Comment', user_post_comment_path(current_user.id, comment.post, comment), method: :delete, data: { confirm: 'Delete Comment?' }, class: "deleteCommentBtn" %>
   <% end %>
 </div>
