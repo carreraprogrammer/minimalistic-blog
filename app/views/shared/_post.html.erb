@@ -1,5 +1,5 @@
 <div class="postContainer">
-  <%= link_to user_post_path(post.author_id, post), class: 'linkToPost' do %>
+  <%= link_to user_post_path(current_user.id, post), class: 'linkToPost' do %>
     <h1 class="postTitle"> <%= post.title %> </h1>
   <% end %>
   <p class="postText"> <%= post.text %></p>

@@ -1,4 +1,5 @@
- <%= render 'shared/navbar'%>
+<% link = root_path%>
+<%= render 'shared/navbar', link: link %>
 
 <%= render partial: 'shared/user_info', locals: { user: @user } %>
 <div class='bioContainer'>

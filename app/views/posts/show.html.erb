@@ -1,3 +1,6 @@
+<% link = user_path(current_user)%>
+<%= render 'shared/navbar', link: link %>
+
 <% if flash[:alert] %>
   <div class="flash alert"><%= flash[:alert] %></div>
 <%elsif flash[:notice]%>
@@ -10,7 +13,7 @@
       <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
       <p>Comments: <%= @post.comments_counter %>,
         Likes: <%= @post.likes_counter %></p>
-      <%= render partial: "shared/like", locals: { like: Like.new, post: @post, user: current_user } %>
+      <%= render partial: "shared/like", locals: { like: @like, post: @post } %>
     </div>
     <p class="postText"> <%= @post.text %> </p>
   </div>

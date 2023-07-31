@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:comments, comments: [:author]).find_by(id: params[:id])
+    @like = Like.find_by(author: current_user, post: @post)
   end
 
   def new

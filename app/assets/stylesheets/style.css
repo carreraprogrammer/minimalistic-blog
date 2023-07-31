@@ -119,7 +119,7 @@ p {
 
 .wellcomeContainer {
   border: 1px solid black;
-  height: 100vh;
+  height: 105vh;
   display: flex;
   flex-direction: column;
   align-items: center;
