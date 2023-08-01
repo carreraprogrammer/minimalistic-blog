@@ -95,6 +95,11 @@ p {
   font-size: 2rem;
 }
 
+.homeButton > img {
+  height: 100%;
+  width: 100%;
+}
+
 #generalContainer {
   padding: 2rem;
   margin-top: 5rem;
