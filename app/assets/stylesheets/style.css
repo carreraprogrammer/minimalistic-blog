@@ -105,14 +105,14 @@ p {
   justify-content: center;
   background-image: url("background.svg");
   background-size: cover;
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
 
 .wellcomeContainer {
   border: 1px solid black;
   height: 100vh;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -271,7 +271,6 @@ p {
   border: 3px solid #f4f5f0;
   background-color: black !important;
   color: white;
-  background: none;
   transition: 0.5s all ease-in-out;
   margin-top: 2rem;
   display: flex;
