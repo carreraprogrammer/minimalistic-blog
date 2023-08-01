@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
   layout 'standard'
   def new
     @comment = Comment.new

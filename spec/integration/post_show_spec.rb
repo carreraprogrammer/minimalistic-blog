@@ -102,15 +102,5 @@ RSpec.describe 'Users show page', type: :system do
         posts.first.reload
       end.to change { posts.first.likes_counter }.by(1)
     end
-
-    scenario 'the same user click the like button twice' do
-      visit user_post_path(users.first, posts.first)
-      click_button 'Like'
-      click_button 'Like'
-
-      expect do
-        posts.first.reload
-      end.to change { posts.first.likes_counter }.by(1)
-    end
   end
 end

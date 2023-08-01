@@ -12,6 +12,5 @@ class Ability
       can :manage, Comment, author_id: user.id
       can :manaje, Like, author_id: user.id
     end
-
   end
 end

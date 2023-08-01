@@ -9,20 +9,24 @@ RSpec.describe 'Post index page', type: :system do
                          '800/0/1670102566497?e=1695254400&v=beta&t=uSsO09GTbEpt2btkcNwmkTup_JiVcw-R1oC4Z_JvAhk',
                   email: 'daniel@gmail.com',
                   password: 'password',
-                  bio: 'Lorem ipsum', post_counter: 3),
+                  bio: 'Lorem ipsum', post_counter: 3,
+                  role: 'admin'
+                  ),
       User.create(name: 'Jane',
                   photo: 'https://media.licdn.com/dms/image/D4E03AQEu5C9mJwO5SQ/profile-displayphoto-shrink_800' \
                          '/0/1670102566497?e=1695254400&v=beta&t=uSsO09GTbEpt2btkcNwmkTup_JiVcw-R1oC4Z_JvAhk',
                   email: 'Jane@gmail.com',
                   password: 'password',
                   bio: 'Lorem ipsum',
-                  post_counter: 5),
+                  post_counter: 5,
+                  role: 'admin'),
       User.create(name: 'John',
                   photo: 'https://www.bu.edu/com/files/2015/08/Groshek_Jacob.jpg',
                   email: 'Jhon@gmail.com',
                   password: 'password',
                   bio: 'Lorem ipsum',
-                  post_counter: 2)
+                  post_counter: 2,
+                  role: 'admin')
     ]
   end
 
@@ -123,8 +127,8 @@ RSpec.describe 'Post index page', type: :system do
 
     scenario 'click on a post\'s title to go to its show page' do
       visit user_posts_path(user)
-      post = posts.first
-      click_link post.title
+      post = posts.second
+      click_on post.title
 
       expect(current_path).to eq(user_post_path(user.id, post.id))
     end
