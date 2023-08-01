@@ -24,7 +24,6 @@ textarea {
 
 h1 {
   font-family: 'Dancing Script', cursive;
-  font-weight: bolder;
   font-size: 3rem;
 }
 
@@ -96,14 +95,6 @@ p {
   font-size: 2rem;
 }
 
-.homeButton > img {
-  height: 4rem;
-}
-
-.homeButton:hover {
-  transform: translateX(5px);
-}
-
 #generalContainer {
   padding: 2rem;
   margin-top: 5rem;
@@ -114,14 +105,14 @@ p {
   justify-content: center;
   background-image: url("background.svg");
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; 
 }
 
 .wellcomeContainer {
   border: 1px solid black;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   justify-content: center;
 }
@@ -166,11 +157,9 @@ p {
 }
 
 .userImage {
-  min-height: 100%;
-  min-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   border: 1px solid black;
-  background-color: white;
 }
 
 .userInformationContainer {
@@ -282,6 +271,7 @@ p {
   border: 3px solid #f4f5f0;
   background-color: black !important;
   color: white;
+  background: none;
   transition: 0.5s all ease-in-out;
   margin-top: 2rem;
   display: flex;
