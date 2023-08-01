@@ -11,6 +11,7 @@ class LikesController < ApplicationController
       flash[:notice] = 'You liked the post!'
       @like.save!
     end
+
     redirect_to user_post_path(@like.author.id, @like.post.id)
   end
 end
