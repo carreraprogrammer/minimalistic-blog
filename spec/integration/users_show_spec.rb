@@ -111,11 +111,13 @@ RSpec.describe 'Users show page', type: :system do
       post = posts.last
       user = users.first
       click_on post.title
+      sleep(0.5)
       expect(current_path).to eq(user_post_path(user.id, post.id))
     end
 
     scenario 'When I click to see all posts, it redirects me to the user\'s post\'s index page.' do
       click_on "See All People's Posts"
+      sleep(0.5)
       expect(current_path).to eq(user_posts_path(user.id))
     end
   end
