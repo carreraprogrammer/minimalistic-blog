@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.includes(:comments, comments: [:author]).find_by(id: params[:id])
+    @like = Like.find_by(author: current_user, post: @post)
   end
 
   def new
@@ -25,6 +26,12 @@ class PostsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path, notice: 'Post deleted successfully.'
   end
 
   private

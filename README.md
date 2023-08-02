@@ -175,7 +175,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-(https://github.com/carreraprogrammer/rails-blog/issues)](https://github.com/carreraprogrammer/rails-blog/issues).
+Feel free to check the [issues page](https://github.com/carreraprogrammer/rails-blog/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
