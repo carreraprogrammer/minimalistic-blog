@@ -10,8 +10,7 @@ RSpec.describe 'Post index page', type: :system do
                   email: 'daniel@gmail.com',
                   password: 'password',
                   bio: 'Lorem ipsum', post_counter: 3,
-                  role: 'admin'
-                  ),
+                  role: 'admin'),
       User.create(name: 'Jane',
                   photo: 'https://media.licdn.com/dms/image/D4E03AQEu5C9mJwO5SQ/profile-displayphoto-shrink_800' \
                          '/0/1670102566497?e=1695254400&v=beta&t=uSsO09GTbEpt2btkcNwmkTup_JiVcw-R1oC4Z_JvAhk',
