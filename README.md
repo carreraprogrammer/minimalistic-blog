@@ -154,7 +154,7 @@ You can deploy this project using:
 
 - GitHub: [@carreraprogrammer](https://github.com/carreraprogrammer)
 - Twitter: [@carreraprogrammer](https://twitter.com/carreraprog)
-- LinkedIn: [Daniel Carrera] (https://www.linkedin.com/in/daniel-carrera-paz-85a917244/)
+- LinkedIn: [Daniel Carrera](https://www.linkedin.com/in/carreraprogrammer/)
 
 👤 **Alejandro Velasquez**
 
@@ -175,7 +175,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/cvalencia1991/Ruby-Catalog-of-my-things/issues).
+(https://github.com/carreraprogrammer/rails-blog/issues)](https://github.com/carreraprogrammer/rails-blog/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
