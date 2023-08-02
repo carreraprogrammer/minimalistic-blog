@@ -10,7 +10,7 @@ class Ability
       can :read, :all
       can :manage, Post, author_id: user.id
       can :manage, Comment, author_id: user.id
-      can :manaje, Like, author_id: user.id
+      can :manage, Like, author_id: user.id
     end
   end
 end
