@@ -128,7 +128,7 @@ RSpec.describe 'Post index page', type: :system do
       visit user_posts_path(user)
       post = posts.second
       click_on post.title
-
+      sleep(0.5)
       expect(current_path).to eq(user_post_path(user.id, post.id))
     end
   end
