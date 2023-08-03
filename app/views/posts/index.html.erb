@@ -1,8 +1,8 @@
 <% link = root_path %>
 <%= render 'shared/navbar', link: link %>
 
-<h1 class='pageTitle'>List of posts by <%= @user.name %> </h1>
-<%= render partial: 'shared/user_info', locals: { user: @user } %>
+<h1 class='pageTitle'>All Community Posts</h1>
+<%= render partial: 'shared/user_info', locals: { user: current_user } %>
 
 <div class="indexPostContainer">
     <% @posts.each do | post |%>
