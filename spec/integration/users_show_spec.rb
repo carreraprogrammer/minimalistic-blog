@@ -62,7 +62,7 @@ RSpec.describe 'Users show page', type: :system do
     it 'shows the user name' do
       expect(page).to have_content(user.name)
     end
-    
+
     it 'shows the number of posts the user has written' do
       expect(page).to have_content(user.post_counter)
     end
@@ -77,7 +77,6 @@ RSpec.describe 'Users show page', type: :system do
         expect(page).to have_content(post.title)
       end
     end
-
 
     it 'shows the text of the three most recent posts' do
       recent_posts = posts.sort_by(&:created_at).last(3)
