@@ -55,24 +55,20 @@ RSpec.describe 'Users show page', type: :system do
       expect(current_path).to eq(user_path(user))
     end
 
-    it 'shows the user name' do
-      expect(page).to have_content(user.name)
-    end
-
-    it 'shows the user bio' do
-      expect(page).to have_content(user.bio)
-    end
-
-    it 'shows the number of posts the user has written' do
-      expect(page).to have_content(user.post_counter)
-    end
-
     it 'shows the user photo' do
       expect(page).to have_css("img[src*='#{user.photo}']")
     end
 
-    it 'shows the "Create New Post" link' do
-      expect(page).to have_link('Create New Post')
+    it 'shows the user name' do
+      expect(page).to have_content(user.name)
+    end
+    
+    it 'shows the number of posts the user has written' do
+      expect(page).to have_content(user.post_counter)
+    end
+
+    it 'shows the user bio' do
+      expect(page).to have_content(user.bio)
     end
 
     it 'shows the title of the three most recent posts' do
@@ -81,6 +77,7 @@ RSpec.describe 'Users show page', type: :system do
         expect(page).to have_content(post.title)
       end
     end
+
 
     it 'shows the text of the three most recent posts' do
       recent_posts = posts.sort_by(&:created_at).last(3)
@@ -94,6 +91,10 @@ RSpec.describe 'Users show page', type: :system do
       recent_posts.each do |post|
         expect(page).to have_content(post.likes_counter)
       end
+    end
+
+    it 'shows the "Create New Post" link' do
+      expect(page).to have_link('Create New Post')
     end
 
     it 'shows the number of comments of the three most recent posts' do
