@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   layout 'standard'
 
   def index
-    @posts = Post.includes(:comments, comments: [:author]).all
-    @user = User.includes(posts: [{ comments: [:author] }]).find(params[:user_id])
+    @posts = Post.includes(comments: [:author]).all
   end
 
   def show
-    @post = Post.includes(:comments, comments: [:author]).find_by(id: params[:id])
-    @like = Like.find_by(author: current_user, post: @post)
+    @post = Post.includes(comments: [:author]).find(params[:id])
+    @like = Like.includes(post: :author).find_by(author: current_user, post: @post)
   end
 
   def new

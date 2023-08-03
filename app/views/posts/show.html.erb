@@ -1,4 +1,4 @@
-<% link = user_path(current_user)%>
+<% link = user_path(@post.author)%>
 <%= render 'shared/navbar', link: link %>
 
 <% if flash[:alert] %>
