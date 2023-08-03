@@ -3,12 +3,12 @@ class PostsController < ApplicationController
   layout 'standard'
 
   def index
-    @posts = Post.includes(:comments, comments: [:author]).all
+    @posts = Post.all
     @user = User.includes(posts: [{ comments: [:author] }]).find(params[:user_id])
   end
 
   def show
-    @post = Post.includes(:comments, comments: [:author]).find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
     @like = Like.find_by(author: current_user, post: @post)
   end
 
