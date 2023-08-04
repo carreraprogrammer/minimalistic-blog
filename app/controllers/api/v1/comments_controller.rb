@@ -13,7 +13,7 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
     comment.text = params[:text]
 
     if comment.save
-      render json: comment
+      render json: { message: 'Comment was succesfully created!' }, status: :created
     else
       render json: { error: 'Comment not created' }, status: :bad_request
     end
