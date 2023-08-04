@@ -1,4 +1,5 @@
 class Api::V1::PostsController < Api::V1::ApplicationController
+  before_action :authenticate_user
   def index
     posts = User.find(params['user_id']).posts
     render json: posts
