@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      post 'login', to: 'login#index'
-      resources :users, only: [] do
+      post 'login', to: 'login#create'
+      resources :users do
         resources :posts, only: [:index] do
           resources :comments, only: [:index, :create]
       end

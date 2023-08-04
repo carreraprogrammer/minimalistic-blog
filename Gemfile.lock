@@ -120,7 +120,11 @@ GEM
       activesupport (>= 5.0.0)
     json (2.6.3)
     jsonapi-renderer (0.2.2)
-    jwt (2.7.1)
+    jwt (1.5.6)
+    knock (2.1.1)
+      bcrypt (~> 3.1)
+      jwt (~> 1.5)
+      rails (>= 4.2)
     language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -295,6 +299,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jwt
+  knock
   letter_opener
   pg (~> 1.1)
   puma (~> 5.0)

@@ -17,6 +17,7 @@ gem 'active_model_serializers'
 # JSON Web Token
 
 gem 'jwt'
+gem 'knock'
 
 # Turbolinks
 
