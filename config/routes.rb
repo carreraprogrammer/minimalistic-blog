@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   get 'pages/index'
   root to: 'pages#index'
   devise_for :users, path: '', path_names: {

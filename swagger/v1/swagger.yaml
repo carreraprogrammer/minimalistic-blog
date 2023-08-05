@@ -1,0 +1,95 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/users/{user_id}/posts":
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List all posts for a user
+      tags:
+      - Posts
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: posts found
+        '404':
+          description: user not found
+  "/api/users/{user_id}/posts/{post_id}/comments":
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: post_id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: List all comments for a user's post
+      tags:
+      - Comments
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: comments found
+        '404':
+          description: user or post not found
+    post:
+      summary: Add a comment to a post
+      tags:
+      - Comments
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: comment added
+        '400':
+          description: invalid comment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+              required:
+              - text
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

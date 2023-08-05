@@ -19,6 +19,9 @@ gem 'active_model_serializers'
 gem 'jwt'
 gem 'knock'
 
+# Rswag for API documentation
+gem 'rswag'
+
 # Turbolinks
 
 gem 'turbolinks'
