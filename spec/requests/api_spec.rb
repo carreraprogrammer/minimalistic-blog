@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 require 'swagger_helper'
 
 describe 'Blog API' do
