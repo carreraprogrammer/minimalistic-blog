@@ -2,7 +2,6 @@ require 'jwt'
 require 'knock'
 
 class Api::V1::LoginController < Api::V1::ApplicationController
-
   def create
     user = User.find_by(email: params[:email])
 

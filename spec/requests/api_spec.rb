@@ -33,7 +33,7 @@ describe 'Blog API' do
 
       response '200', 'comments found' do
         let(:user_id) { create(:user).id } # Adjust this based on your user setup
-        let(:post_id) { create(:post, user_id: user_id).id } # Adjust this based on your post setup
+        let(:post_id) { create(:post, user_id:).id } # Adjust this based on your post setup
         run_test!
       end
 
@@ -54,12 +54,12 @@ describe 'Blog API' do
         properties: {
           text: { type: :string }
         },
-        required: [ 'text' ]
+        required: ['text']
       }
 
       response '201', 'comment added' do
         let(:user_id) { create(:user).id } # Adjust this based on your user setup
-        let(:post_id) { create(:post, user_id: user_id).id } # Adjust this based on your post setup
+        let(:post_id) { create(:post, user_id:).id } # Adjust this based on your post setup
         let(:comment) { { text: 'A new comment' } }
         run_test!
       end

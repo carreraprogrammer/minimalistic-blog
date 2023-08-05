@@ -7,9 +7,9 @@ class Api::V1::ApplicationController < ActionController::API
   end
 
   def authenticate_user
-    unless user_signed_in?
-      render json: { error: 'Unauthorized' }, status: :unauthorized
-    end
+    return if user_signed_in?
+
+    render json: { error: 'Unauthorized' }, status: :unauthorized
   end
 
   private
@@ -26,7 +26,7 @@ class Api::V1::ApplicationController < ActionController::API
 
   def token_from_request_headers
     pattern = /^Bearer /
-    header  = request.env['HTTP_AUTHORIZATION'] 
+    header = request.env['HTTP_AUTHORIZATION']
     header.gsub(pattern, '') if header&.match(pattern)
   end
 end
